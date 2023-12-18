@@ -1,5 +1,5 @@
 <template>
-   <header class="d-flex">
+   <header class="d-flex ps-3">
     <img src="../assets/img/Yugioh.webp" alt="LOGO">
     <h1>Yu-Gi-Oh Api</h1>
    </header>
@@ -13,9 +13,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    img{
+
+header{
+
+  img{
       object-fit: cover;
       width:150px;
       height: 100%;
     }
+}
+    
 </style>

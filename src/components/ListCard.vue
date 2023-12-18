@@ -1,9 +1,9 @@
 <template lang="">
-    <div>
-
-        <h1>ListCard</h1>
-        
-    </div>
+   <section>
+    <article v-for="character in  listaCard">
+    {{character.name}}
+</article>
+   </section>
 </template>
 <script>
 import { store } from '../js/store.js';
@@ -13,6 +13,14 @@ export default {
             store,
         }
     },
+
+ props:{
+    listaCard:{
+        type: Array,
+        required:true,
+    }
+ }
+
     
 }
 </script>

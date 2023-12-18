@@ -3,7 +3,9 @@
   <AppHeader/>
   <main>
   <TypeCard/>
+ 
   <ListCard :listaCard="cardCharacters"/>
+   <div v-if="isLoading">Loading...</div>
   </main>
 </template>
 
@@ -27,6 +29,7 @@ export default {
 data() {
   return {
     cardCharacters:[],
+    isLoading:true
   }
 },
 
@@ -39,6 +42,8 @@ methods:{
      })
      .catch(function (error){
       console.error(error);
+      
+      this.isLoading = false;
      });
   }
 },

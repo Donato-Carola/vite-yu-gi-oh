@@ -32,7 +32,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
- div.card{
+     div.card{
     height: 100%;
  }
 </style>

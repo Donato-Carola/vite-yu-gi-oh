@@ -3,7 +3,7 @@
       {{character.name}}
       {{character.archetype}}-->
       <div class="card" >
-        <img :src="character.card_images[0].image_url_small" class="card-img-top" alt="image" />
+        <img :src="character.card_images[0].image_url" class="card-img-top" alt="image" />
         <div class="card-body">
           <h5 class="card-title">{{character.name}}</h5>
           <p class="card-text">

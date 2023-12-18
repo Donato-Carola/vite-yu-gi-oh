@@ -35,7 +35,7 @@ data() {
 
 methods:{
   getListCard(){
-     axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+     axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0')
      .then((response) =>{
       console.log(response);
       this.cardCharacters = response.data.data;

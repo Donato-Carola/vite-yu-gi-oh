@@ -1,33 +1,35 @@
 <template>
-  <div>
-    <AppHeader/>
-  </div>
 
-
-
+  <AppHeader/>
+  <main>
+    <TypeCard/>
+  <ListCard/>
+  </main>
 </template>
 
 
-<script >
-import AppHeader from './components/AppHeader.vue';
 
-export default{
-  name: 'App',
-  components:{
-     AppHeader,
-    
 
-  }
+<script>
+import axios from 'axios';
+
+import AppHeader from "./components/AppHeader.vue";
+import ListCard from "./components/ListCard.vue";
+import TypeCard from "./components/TypeCard.vue";
+
+
+export default {
+  components: {
+    AppHeader,
+    ListCard,
+    TypeCard,
+}
 }
 </script>
 
 
 
-
 <style lang="scss">
-@use './styles/general.scss' as * ;
-
-
-
+@use "./styles/general.scss";
 
 </style>

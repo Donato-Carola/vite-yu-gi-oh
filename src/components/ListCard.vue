@@ -1,14 +1,13 @@
-<template lang=""> 
-
- <div class="box_card container">
-  <section class="container">
-   <div class="count ps-5">Found number card</div>
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-lg-3">
-    <article v-for="character in listaCard" :key="character.id" class="col">
-      <singleCard :character="character"/>
-    </article>
-   </div>
-  </section>
+<template lang="">
+  <div class="box_card container">
+    <section class="container">
+      <div class="count ps-5">Found number card</div>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-lg-3">
+        <article v-for="character in listaCard" :key="character.id" class="col">
+          <singleCard :character="character" />
+        </article>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -20,8 +19,8 @@ export default {
       store,
     };
   },
-  components:{
-    singleCard
+  components: {
+    singleCard,
   },
 
   props: {
@@ -33,30 +32,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
-div.box_card{
-    height: 100vh;
-    position: relative;
-    
+div.box_card {
+  height: 100vh;
+  position: relative;
 }
 
-section.container{
-   padding-top: 3.5rem;
-   height: 100%;
-   overflow-y: auto;
+section.container {
+  padding-top: 3.5rem;
+  height: 100%;
+  overflow-y: auto;
 }
 
-div.count{
-   width: 100%;
-    position: absolute;
-    z-index: 5;
-    top:0;
-   display: flex;
-   align-items:center ;
-   height: 50px;
-   background-color: rgb(27, 27, 27);
-   color: white;
-
+div.count {
+  width: 97%;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: rgb(27, 27, 27);
+  color: white;
 }
-
 </style>

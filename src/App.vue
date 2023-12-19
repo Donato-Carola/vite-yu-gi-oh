@@ -46,10 +46,24 @@ export default {
           this.isLoading = false;
         });
     },
+    getListType() {
+      axios
+        .get("https://db.ygoprodeck.com/api/v7/archetypes.php")
+        .then((response) => {
+          console.log(response);
+          this.store.listType = response.data;
+        })
+        .catch(function (error) {
+          console.error(error);
+
+          this.isLoading = false;
+        });
+    },
   },
 
   created() {
     this.getListCard();
+    this.getListType();
   },
 };
 </script>

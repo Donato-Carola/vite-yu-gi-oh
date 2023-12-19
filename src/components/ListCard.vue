@@ -1,7 +1,7 @@
 <template lang="">
   <div class="box_card container">
     <section class="container">
-      <div class="count ps-5">Found number card</div>
+      <div class="count ps-5">Found {{listaCard.length}} card</div>
       <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-lg-3">
         <article v-for="character in listaCard" :key="character.id" class="col">
           <singleCard :character="character" />

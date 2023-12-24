@@ -1,10 +1,10 @@
 <template lang="">
   <div class="box_card container">
     <section class="container">
-      <div class="count ps-5">Found {{store.listaCard.length}} card</div>
+      <div class="count ps-5">Found {{cardCharacters.length}} card</div>
       <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-lg-3">
-        <article v-for="character in store.listaCard" :key="character.id" class="col">
-          <singleCard :character="character" />
+        <article v-for="card in cardCharacters" :key="card.id" class="col">
+          <singleCard :card="card" />
         </article>
       </div>
     </section>
@@ -13,22 +13,37 @@
 <script>
 import { store } from "../js/store.js";
 import singleCard from "./singleCard.vue";
+import axios from 'axios'
 export default {
   data() {
     return {
       store,
+      cardCharacters: [],
+      apiUrl : 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0'
     };
   },
   components: {
     singleCard,
   },
+  methods: {
+    getListCard() {
+      axios
+        .get(this.apiUrl)
+        .then((response) => {
+          console.log(response);
+          this.cardCharacters = response.data.data;
+        })
+        .catch(function (error) {
+          console.error(error);
 
- /* props: {          //QUANDO USIAMO LO STORE DOVE PASSIAMO L'API LE PROPS DEVONO ESSERE CANCELLATE
-    listaCard: {
-      type: Array,
-      required: true,
+          this.isLoading = false;
+        });
     },
-  },*/
+
+  },
+  created(){
+    this.getListCard();
+}
 };
 </script>
 <style lang="scss" scoped>

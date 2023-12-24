@@ -3,11 +3,11 @@
       {{character.name}}
       {{character.archetype}}-->
       <div class="card" >
-        <img :src="character.card_images[0].image_url" class="card-img-top" alt="image" />
+        <img :src="card.card_images[0].image_url" class="card-img-top" alt="image" />
         <div class="card-body">
-          <h5 class="card-title">{{character.name}}</h5>
+          <h5 class="card-title">{{card.name}}</h5>
           <p class="card-text">
-            {{character.archetype}}
+            {{card.archetype}}
           </p>
           
         </div>
@@ -16,7 +16,7 @@
 <script>
 export default {
     props:{
-        character:{
+        card:{
             type: Object,
             required:true
         }
